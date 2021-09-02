@@ -1,0 +1,44 @@
+name: custom_params
+version: 0.0.1
+patches:
+  lms-env: |
+    "CMS_BASE": "devstudio.socialgoodplatform.com",
+    "ENTERPRISE_API_URL": "https://devlms.socialgoodplatform.com/enterprise/api/v1/",
+    "LMS_BASE": "devlms.socialgoodplatform.com",
+    "LMS_INTERNAL_ROOT_URL": "https://devlms.socialgoodplatform.com",
+    "LMS_ROOT_URL": "https://devlms.socialgoodplatform.com",
+    "OAUTH_OIDC_ISSUER": "https://devlms.socialgoodplatform.com/oauth2",
+    "SITE_NAME": "devlms.socialgoodplatform.com",
+    "CORS_ORIGIN_ALLOW_ALL": true,
+    "OAUTH_ENFORCE_SECURE": true, 
+    "JWT_AUTH": {
+      "JWT_ISSUER": "https://devlms.socialgoodplatform.com/oauth2",
+      "JWT_ISSUERS": [
+        {
+          "ISSUER": "https://devlms.socialgoodplatform.com/oauth2"
+        }
+      ],
+    },
+    "DEFAULT_JWT_ISSUER": {
+      "ISSUER": "https://devlms.socialgoodplatform.com/oauth2"
+    },
+    "X_FRAME_OPTIONS": "ALLOW",
+    "REGISTRATION_EXTRA_FIELDS": {
+      "city": "hidden",
+      "confirm_email": "hidden",
+      "country": "hidden",
+      "gender": "hidden",
+      "goals": "hidden",
+      "honor_code": "hidden",
+      "level_of_education": "hidden",
+      "mailing_address": "hidden",
+      "terms_of_service": "hidden",
+      "year_of_birth": "hidden"
+    },
+    "DEFAULT_MOBILE_AVAILABLE": true,
+    "LOGIN_REDIRECT_WHITELIST": [
+      "devstudio.socialgoodplatform.com"
+    ]
+
+  lms-env-features: |
+    "PREVIEW_LMS_BASE": "preview.devlms.socialgoodplatform.com"
